@@ -11,3 +11,19 @@ function addTask(){
     }
 
 }
+
+function completeTask(event){
+    const task = event.target;
+    task.classList.toggle('completed');
+}
+li.addEventListener('click', completeTask);
+
+function deleteTask(event){
+    const task=event.target.parentElement;
+    taskList.removeChild(task);
+}
+
+const deleteBtn=document.createElement('button');
+deleteBtn.textContent='Delete';
+deleteBtn.addEventListener('click', deleteTask);
+li.appendChild(deleteBtn);
